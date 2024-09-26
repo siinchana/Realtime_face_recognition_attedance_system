@@ -84,7 +84,7 @@ The system follows a client-server architecture:
 
 ## Snapshots
 - **Login Page**:  
-  ![Login Page](Snapshots/login.png)
+  ![Login Page](Snapshots/login.jpeg)
 
 - **Dashboard**:  
   ![Dashboard](Snapshots/dashboard.png)
