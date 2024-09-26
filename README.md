@@ -71,16 +71,16 @@ The system follows a client-server architecture:
 
 ## Usage
 1. **Login Page**: Users input their credentials to access the system.
-    ![Login Page](images/login.png)
+
    
 2. **Dashboard**: The dashboard provides an overview of classes, students, and allows administrators to take attendance.
-    ![Dashboard](images/dashboard.png)
+
    
 3. **Take Attendance**: When the "Take Attendance" button is clicked, the camera captures an image, and the system recognizes faces.
-    ![Take Attendance](images/attendance.png)
+    
 
 4. **Attendance Logging**: Once a match is found, the system logs the attendance and stores the details in the MySQL database.
-    ![Attendance Logging](images/attendance_log.png)
+   
 
 ## Snapshots
 - **Login Page**:  
