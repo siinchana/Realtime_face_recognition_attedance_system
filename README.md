@@ -87,10 +87,10 @@ The system follows a client-server architecture:
   ![Login Page](Snapshots/login.jpeg)
 
 - **Dashboard**:  
-  ![Dashboard](Snapshots/dashboard.png)
+  ![Dashboard](Snapshots/dashboard.jpeg)
 
 - **Student Details**:  
-  ![Student Details](Snapshots/student_details.png)
+  ![Student Details](Snapshots/viewstudentattendance.jpeg)
 
 - **Class Schedule**:  
   ![Class Schedule](Snapshots/class_schedule.png)
