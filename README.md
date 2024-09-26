@@ -84,16 +84,16 @@ The system follows a client-server architecture:
 
 ## Snapshots
 - **Login Page**:  
-  ![Login Page](images/login.png)
-  
+  ![Login Page](Snapshots/login.png)
+
 - **Dashboard**:  
-  ![Dashboard](images/dashboard.png)
-  
+  ![Dashboard](Snapshots/dashboard.png)
+
 - **Student Details**:  
-  ![Student Details](images/student_details.png)
-  
+  ![Student Details](Snapshots/student_details.png)
+
 - **Class Schedule**:  
-  ![Class Schedule](images/class_schedule.png)
+  ![Class Schedule](Snapshots/class_schedule.png)
 
 ## Results and Discussion
 - **Recognition Accuracy**: Achieved 95% accuracy in facial recognition through extensive testing.
