@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="schedule.css">
+    <title>Schedule</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <h2 id="username-display">Hello, User</h2>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="dashboard.html"><i class="fa fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="all-courses.html"><i class="fa fa-book"></i> All Courses</a></li>
+                    <li><a href="schedule.html" class="active"><i class="fa fa-calendar"></i> Schedule</a></li>
+                    <li><a href="attendance-database.html"><i class="fa fa-database"></i> Attendance Database</a></li>
+                    <li><a href="attendance-registry.html"><i class="fa fa-clipboard-check"></i> Attendance Registry</a></li>
+                </ul>
+                <ul class="bottom-nav">
+                    <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="center-section">
+            <div class="header">
+                <h1 class="title">Class Schedule</h1>
+            </div>
+            <div class="timetable">
+                <div class="day">Monday</div>
+                <div class="class">SE</div>
+                <div class="class">DSV</div>
+                <div class="class">OE</div>
+                <div class="class">PE</div>
+                <div class="class">SE</div>
+                <div class="day">Tuesday</div>
+                <div class="class">PE</div>
+                <div class="class">SE</div>
+                <div class="class">DSV</div>
+                <div class="class">OE</div>
+                <div class="class">PE</div>
+                <div class="day">Wednesday</div>
+                <div class="class">OE</div>
+                <div class="class">PE</div>
+                <div class="class">SE</div>
+                <div class="class">DSV</div>
+                <div class="class">OE</div>
+                <div class="day">Thursday</div>
+                <div class="class">DSV</div>
+                <div class="class">OE</div>
+                <div class="class">PE</div>
+                <div class="class">SE</div>
+                <div class="class">DSV</div>
+                <div class="day">Friday</div>
+                <div class="class">SE</div>
+                <div class="class">DSV</div>
+                <div class="class">OE</div>
+                <div class="class">PE</div>
+                <div class="class">SE</div>
+                <div class="day">Saturday</div>
+                <div class="class">PE</div>
+                <div class="class">SE</div>
+                <div class="class">DSV</div>
+                <div class="class">OE</div>
+                <div class="class">PE</div>
+            </div>
+        </div>
+    </div>
+    <div class="logout-container">
+        <button class="logout-btn" id="logout-btn">Logout</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const username = localStorage.getItem('username') || 'User';
+            document.getElementById('username-display').innerText = `Hello, ${username}`;
+
+            // Logout functionality
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                localStorage.removeItem('username');
+                window.location.href = 'index.html'; // Assuming index.html is the login page
+            });
+        });
+    </script>
+</body>
+</html>

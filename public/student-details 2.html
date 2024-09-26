@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="student-details.css">
+    <title>Student Details</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Student Details</h1>
+        </div>
+        <div class="top-actions">
+            <div class="action-box" id="take-attendance">Take Attendance</div>
+        </div>
+        <div class="content">
+            <div id="student-list"></div>
+        </div>
+    </div>
+    <div class="logout-container">
+        <button class="logout-btn">Logout</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const params = new URLSearchParams(window.location.search);
+            const branch = params.get('branch');
+            const section = params.get('section');
+
+            // Fetch student details
+            try {
+                const response = await fetch(`/students?branch=${branch}&section=${section}`);
+                const students = await response.json();
+                displayStudents(students);
+            } catch (error) {
+                console.error('Error fetching student details:', error);
+            }
+
+            function displayStudents(students) {
+                const studentList = document.getElementById('student-list');
+                studentList.innerHTML = ''; // Clear previous results
+
+                if (students.length === 0) {
+                    studentList.innerHTML = '<p>No students found</p>';
+                    return;
+                }
+
+                students.forEach(student => {
+                    const studentItem = document.createElement('div');
+                    studentItem.className = 'student-item';
+                    const imagePath = student.ImagePath ? student.ImagePath : 'path/to/default-image.jpg';
+                    studentItem.innerHTML = `
+                        <div class="student-details">
+                            <p>Name: ${student.Name}</p>
+                            <p>Branch: ${student.Branch}</p>
+                            <p>USN: ${student.USN}</p>
+                            <p>Section: ${student.Section}</p>
+                        </div>
+                        <div class="image-container">
+                            <img src="${imagePath}" alt="Student Image" class="student-image" onerror="this.src='path/to/default-image.jpg';">
+                        </div>
+                    `;
+                    studentList.appendChild(studentItem);
+                });
+            }
+
+            // Logout functionality
+            document.querySelector('.logout-btn').addEventListener('click', () => {
+                localStorage.removeItem('username');
+                window.location.href = 'index.html';
+            });
+
+            // Take Attendance functionality
+            document.getElementById('take-attendance').addEventListener('click', () => {
+                window.location.href = 'take-attendance.html'; // Redirect to the take attendance page
+            });
+        });
+    </script>
+</body>
+</html>

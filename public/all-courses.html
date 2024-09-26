@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="all-courses.css">
+    <title>All Courses</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <h2 id="username-display">Hello, User</h2>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="dashboard.html"><i class="fa fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="all-courses.html" class="active"><i class="fa fa-book"></i> All Courses</a></li>
+                    <li><a href="schedule.html"><i class="fa fa-calendar"></i> Schedule</a></li>
+                    <li><a href="attendance-database.html"><i class="fa fa-database"></i> Attendance Database</a></li>
+                    <li><a href="attendance-registry.html"><i class="fa fa-clipboard-check"></i> Attendance Registry</a></li>
+                </ul>
+                <ul class="bottom-nav">
+                    <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="center-section">
+            <div class="header">
+                <h1 class="title">All Courses</h1>
+                <div class="filters">
+                    <button>Filter by</button>
+                    <button>Time</button>
+                    <button>Level</button>
+                    <button>Language</button>
+                    <button>Type</button>
+                    <i class="fa fa-search"></i>
+                    <i class="fa fa-bell"></i>
+                </div>
+            </div>
+            <div class="courses">
+                <div class="course">
+                    <div class="course-info">
+                        <h3>Operating System</h3>
+                        <p>Learn the basic operating system abstractions, mechanisms, and their implementations.</p>
+                        <span>Created by Naveen</span>
+                        <i class="fa fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div class="course">
+                    <div class="course-info">
+                        <h3>Artificial Intelligence</h3>
+                        <p>Intelligence demonstrated by machines, unlike the natural intelligence displayed by humans and animals.</p>
+                        <span>Created by Mallikarrjun</span>
+                        <i class="fa fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div class="course">
+                    <div class="course-info">
+                        <h3>Software Engineering</h3>
+                        <p>Learn detailed engineering to the design, development, and maintenance of software.</p>
+                        <span>Created by Shwetha</span>
+                        <i class="fa fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div class="course">
+                    <div class="course-info">
+                        <h3>Computer Networks</h3>
+                        <p>Understand the principles and protocols used in computer networking and how they support the Internet and other networks.</p>
+                        <span>Created by Abhilash C B</span>
+                        <i class="fa fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div class="course">
+                    <div class="course-info">
+                        <h3>Data Science and Statistics</h3>
+                        <p>Explore the fundamental principles of data science and statistical analysis.</p>
+                        <span>Created by Kavya</span>
+                        <i class="fa fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div class="course">
+                    <div class="course-info">
+                        <h3>Deep Learning</h3>
+                        <p>Dive into the advanced concepts and techniques of deep learning and neural networks.</p>
+                        <span>Created by Arjun</span>
+                        <i class="fa fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div class="course">
+                    <div class="course-info">
+                        <h3>Cyber Security</h3>
+                        <p>Learn about protecting systems, networks, and programs from digital attacks.</p>
+                        <span>Created by Vikram</span>
+                        <i class="fa fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div class="course">
+                    <div class="course-info">
+                        <h3>Machine Learning</h3>
+                        <p>Get insights into the algorithms and methods of machine learning and their applications.</p>
+                        <span>Created by Neha</span>
+                        <i class="fa fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="logout-container">
+        <button class="logout-btn" id="logout-btn">Logout</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const username = localStorage.getItem('username') || 'User';
+            document.getElementById('username-display').innerText = `Hello, ${username}`;
+
+            // Logout functionality
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                localStorage.removeItem('username');
+                window.location.href = 'index.html'; // Assuming index.html is the login page
+            });
+        });
+    </script>
+</body>
+</html>

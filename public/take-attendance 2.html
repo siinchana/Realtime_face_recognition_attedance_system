@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="take-attendance.css">
+    <title>Take Attendance</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Take Attendance</h1>
+        </div>
+        <div class="content">
+            <div class="video-container">
+                <video id="video" autoplay></video>
+            </div>
+        </div>
+    </div>
+    <div class="logout-container">
+        <button class="logout-btn">Logout</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Start the video stream
+            const video = document.getElementById('video');
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then((stream) => {
+                    video.srcObject = stream;
+                })
+                .catch((err) => {
+                    console.error('Error accessing webcam:', err);
+                });
+
+            // Logout functionality
+            document.querySelector('.logout-btn').addEventListener('click', () => {
+                localStorage.removeItem('username');
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>

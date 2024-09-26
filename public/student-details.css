@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff); /* Same background as dashboard */
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 90vh;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 36px;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+
+.top-actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.action-box {
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 40%; /* Extend horizontally */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-box:hover {
+    background-color: #b0c4de;
+}
+
+.content {
+    width: 100%;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    height: calc(100% - 140px); /* Adjusting height to fit the content */
+}
+
+#student-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.student-item {
+    background-color: #fff; /* White background for student detail boxes */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Ensure items are vertically centered */
+}
+
+.student-details {
+    flex-grow: 1;
+}
+
+.image-container {
+    flex-shrink: 0;
+}
+
+.student-image {
+    width: 80px; /* Adjusted size for passport photo */
+    height: 100px; /* Adjusted size for passport photo */
+    border-radius: 10px; /* Slight border radius for a cleaner look */
+    object-fit: cover;
+}
+
+.student-item p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.logout-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.logout-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4c3cbd;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #615bd8;
+}

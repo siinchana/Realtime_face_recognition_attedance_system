@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <h2 id="username-display">Hello, User</h2>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="#"><i class="fa fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="all-courses.html"><i class="fa fa-book"></i> All Courses</a></li>
+                    <li><a href="attendance-database.html"><i class="fa fa-database"></i> Attendance Database</a></li>
+                    <li><a href="schedule.html"><i class="fa fa-calendar"></i> Schedule</a></li>
+                    <li><a href="attendance-registry.html"><i class="fa fa-clipboard-check"></i> Attendance Registry</a></li>
+                </ul>
+                <ul class="bottom-nav">
+                    <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="center-section">
+            <div class="header">
+                <h1 class="title">JSS ACADEMY OF TECHNICAL EDUCATION</h1>
+            </div>
+            <div class="content">
+                <div class="box large-box">
+                    <h2>Attendance Database</h2>
+                    <div class="branches">
+                        <div class="branch">
+                            <button class="branch-btn" data-branch="CSE">
+                                Computer Science <i class="fa fa-chevron-down"></i>
+                            </button>
+                            <div class="sections hidden" id="sections-CSE">
+                                <button class="section-btn" data-section="A">A</button>
+                                <button class="section-btn" data-section="B">B</button>
+                                <button class="section-btn" data-section="C">C</button>
+                            </div>
+                        </div>
+                        <div class="branch">
+                            <button class="branch-btn" data-branch="ISE">
+                                Information Science <i class="fa fa-chevron-down"></i>
+                            </button>
+                            <div class="sections hidden" id="sections-ISE">
+                                <button class="section-btn" data-section="A">A</button>
+                                <button class="section-btn" data-section="B">B</button>
+                                <button class="section-btn" data-section="C">C</button>
+                            </div>
+                        </div>
+                        <div class="branch">
+                            <button class="branch-btn" data-branch="AIML">
+                                Artificial Intelligence & ML <i class="fa fa-chevron-down"></i>
+                            </button>
+                            <div class="sections hidden" id="sections-AIML">
+                                <button class="section-btn" data-section="A">A</button>
+                                <button class="section-btn" data-section="B">B</button>
+                                <button class="section-btn" data-section="C">C</button>
+                            </div>
+                        </div>
+                        <div class="branch">
+                            <button class="branch-btn" data-branch="ECE">
+                                Electronics and Communication <i class="fa fa-chevron-down"></i>
+                            </button>
+                            <div class="sections hidden" id="sections-ECE">
+                                <button class="section-btn" data-section="A">A</button>
+                                <button class="section-btn" data-section="B">B</button>
+                                <button class="section-btn" data-section="C">C</button>
+                            </div>
+                        </div>
+                        <div class="branch">
+                            <button class="branch-btn" data-branch="CIVIL">
+                                Civil <i class="fa fa-chevron-down"></i>
+                            </button>
+                            <div class="sections hidden" id="sections-CIVIL">
+                                <button class="section-btn" data-section="A">A</button>
+                                <button class="section-btn" data-section="B">B</button>
+                                <button class="section-btn" data-section="C">C</button>
+                            </div>
+                        </div>
+                        <div class="branch">
+                            <button class="branch-btn" data-branch="MECH">
+                                Mechanical <i class="fa fa-chevron-down"></i>
+                            </button>
+                            <div class="sections hidden" id="sections-MECH">
+                                <button class="section-btn" data-section="A">A</button>
+                                <button class="section-btn" data-section="B">B</button>
+                                <button class="section-btn" data-section="C">C</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="logout-container">
+        <button class="logout-btn" id="logout-btn">Logout</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const username = localStorage.getItem('username') || 'User';
+            document.getElementById('username-display').innerText = `Hello, ${username}`;
+
+            const branchButtons = document.querySelectorAll('.branch-btn');
+            branchButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const branch = button.dataset.branch;
+                    const sections = document.getElementById(`sections-${branch}`);
+                    sections.classList.toggle('hidden');
+                });
+            });
+
+            const sectionButtons = document.querySelectorAll('.section-btn');
+            sectionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const branch = button.closest('.sections').id.split('-')[1];
+                    const section = button.dataset.section;
+                    window.location.href = `student-details.html?branch=${branch}&section=${section}`;
+                });
+            });
+
+            // Logout functionality
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                localStorage.removeItem('username');
+                window.location.href = 'index.html'; // Assuming index.html is the login page
+            });
+        });
+    </script>
+</body>
+</html>
