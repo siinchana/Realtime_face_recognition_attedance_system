@@ -92,8 +92,8 @@ The system follows a client-server architecture:
 - **Student Details**:  
   ![Student Details](Snapshots/view_student_attendance.jpeg)
 
-- **Camera to take attendance**:  
-  ![Camera to take attendance](Snapshots/camera_enabled_to_take_attendance.jpeg)
+- **Camera enabled to take attendance**:  
+  ![Camera enabaled to take attendance](Snapshots/camera_enabled_to_take_attendance.jpeg)
 
   
 - **Attendance Marked**:  
