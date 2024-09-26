@@ -90,10 +90,14 @@ The system follows a client-server architecture:
   ![Dashboard](Snapshots/dashboard.jpeg)
 
 - **Student Details**:  
-  ![Student Details](Snapshots/viewstudentattendance.jpeg)
+  ![Student Details](Snapshots/view_student_attendance.jpeg)
 
-- **Class Schedule**:  
-  ![Class Schedule](Snapshots/class_schedule.png)
+- **Camera to take attendance**:  
+  ![Camera to take attendance](Snapshots/camera_enabled_to_take_attendance.jpeg)
+
+  
+- **Attendance Marked**:  
+  ![Attendance Marked](Snapshots/attendance_marked.jpeg)
 
 ## Results and Discussion
 - **Recognition Accuracy**: Achieved 95% accuracy in facial recognition through extensive testing.
